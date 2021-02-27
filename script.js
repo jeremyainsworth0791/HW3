@@ -41,10 +41,10 @@ function generatePassword(){
   // empty variable to guarantee all chars are present
   var guarChar = [];
   var password = "";
-
+  var choices = [];
     if(options.pUppercase === true){
       
-      var choices = uppercase;
+      var choices = choices.concat(uppercase);
       
       guarChar.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
     }
@@ -68,8 +68,8 @@ function generatePassword(){
     }
     console.log(choices);
     console.log(guarChar);
-    n = guarChar.length;
-
+   var n = guarChar.length;
+    // for (var i=0; i<options.length; i++)
     for(i = 1; i <= (options.pLength-n);i++){
       guarChar.push(choices[Math.floor(Math.random() * choices.length)]);
       console.log (guarChar);
